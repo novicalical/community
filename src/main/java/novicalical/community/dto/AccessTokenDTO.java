@@ -3,7 +3,6 @@ package novicalical.community.dto;
 /**
  * Created by novicalical on 2023/4/10
  */
-
 public class AccessTokenDTO {
     private String client_id;
     private String client_secret;

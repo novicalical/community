@@ -2,7 +2,6 @@ package novicalical.community.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
 /**
  * Created by novicalical on 2023/4/10
  */

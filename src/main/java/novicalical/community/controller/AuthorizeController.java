@@ -12,25 +12,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * Created by novicalical on 2023/4/10
  */
-
 @Controller
 public class AuthorizeController {
+
     @Autowired
     private GithubProvider githubProvider;
 
-    @Value("$(github.client.id)")
+    @Value("${github.client.id}")
     private String clientId;
-
-    @Value("$(github.client.secret)")
+    @Value("${github.client.secret}")
     private String clientSecret;
-
-    @Value("$(github.redirect.uri)")
+    @Value("${github.redirect.uri}")
     private String redirectUri;
 
     @GetMapping("/callback")
-    public String callback(@RequestParam(name="code")String code,
+    public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state){
-        final AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
+        AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setClient_id(clientId);
         accessTokenDTO.setClient_secret(clientSecret);
         accessTokenDTO.setCode(code);
