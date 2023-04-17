@@ -72,6 +72,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>5.2.4</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/community?serverTimezone=UTC;useUnicode=true;characterEncoding=utf-8;useSSL=true</url>
+                    <user>root</user>
+                    <password>123456</password>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.alibaba</groupId>
+                        <artifactId>druid</artifactId>
+                        <version>1.0.29</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
